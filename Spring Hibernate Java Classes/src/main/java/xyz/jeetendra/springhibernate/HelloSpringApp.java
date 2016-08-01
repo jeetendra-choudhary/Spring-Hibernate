@@ -1,11 +1,12 @@
 package xyz.jeetendra.springhibernate;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class HelloSpringApp {
 	public static void main (String args[]){
 		//Load Spring Configuration file
 		//XmlBeanFactory context = new XmlBeanFactory(new ClassPathResource("applicationContext.xml"));
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig.class);
 			
 		//retrieve bean from spring container
 		Coach theCoach = context.getBean("tennisCoach",Coach.class);	
